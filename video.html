@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPX-M16</title>
+    <style>
+        :root { 
+            
+        }
+        body {
+  margin: 0px;
+  display: grid;
+  justify-content: center;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#ffffff,#ece9e6); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#ffffff,#ece9e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header {
+  position: sticky;
+  width: 100%;
+  height: 80px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  background: #536976; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#292e49,#536976); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#292e49,#536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.logo {
+  margin: 0px;
+  width: 300px;
+  height: 0px;
+}
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  width: 300px;
+  height: 80px;
+  color: azure;
+  box-sizing: border-box;
+  padding-top: 0px;
+}
+.version {
+}
+main {
+  display: flex;
+  width: 1450px;
+  height: 600px;
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.nav {
+}
+.nav-bar {
+  margin: 0px;
+  width: 100px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+ul {
+  list-style: none;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+li {
+  width: 100px;
+  height: 200px;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 80px 30px 58px 30px;
+}
+li:hover {
+  background: #eef2f3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: black;
+}
+.li_video {
+  background: #eef2f3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.li_edid {
+}
+.li_preset {
+  padding-left: 28px;
+}
+
+span {
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.video {
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.edid {
+  color: azure;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.preset {
+  color: azure;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.btn__group {
+
+}
+table {
+
+    border-collapse: collapse;
+ 
+}
+td { 
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 15px;
+}
+select { 
+    width: 200px;
+    height: 20px;
+    border: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 1px 65px 1px 65px ;
+}
+option { 
+    
+}
+.btn {
+  width: 60px;
+  height: 30px;
+  background-color: #f2f6fc;
+}
+.btn_input {
+ 
+
+}
+
+.output {
+  border-radius: 10px;
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3a7bd5,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #f2f6fc;
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+.switch {
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #ece9e6,
+    #ffffff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6,#ffffff ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.switch:hover {
+  border-radius: 9px;
+}
+.btn__click {
+  background: #e0eafc; /* fallback for old browsers */
+  background: -webkit-linear-gradient( to right, #cfdef3, #e0eafc ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient( to right, #cfdef3, #e0eafc ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+     
+    </style>
+</head>
+<body>
+ <header>
+    <div class="logo">
+    </div>
+    <h1>SPX-M16</h1>
+    <div class="version">AmberUI 1.0ver</div>
+ </header>
+ <main>
+    <div class="nav">
+        <nav class="nav-bar">
+             <ul class="ul">
+             <li class="li_video"><a class="video" href="spx.html" style="text-decoration: none;"><span>VIDEO</span></a></li> 
+             <li class="li_edid"><a class="edid" href="edid.html" style="text-decoration: none;"><span>EDID</span></a></li> 
+             <li class="li_preset"><a class="preset" href="preset.html" style="text-decoration: none;"><span>PRESET</span></a></li> 
+         </ul>
+     
+        </nav>
+     </div>
+    <div class="switch__table">
+        <table>
+            <tr>
+                <th>Output</th>
+                <th>Input</th>
+            </tr>
+            <tr>
+                <td>Output01</td>
+                <td>
+                    <select name="output01" id="output01">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output02</td>
+                <td>
+                    <select name="output02" id="output02">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output03</td>
+                <td>
+                    <select name="output03" id="output03">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output04</td>
+                <td>
+                    <select name="output04" id="output04">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output05</td>
+                <td>
+                    <select name="output05" id="output05">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output06</td>
+                <td>
+                    <select name="output06" id="output06">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output07</td>
+                <td>
+                    <select name="output07" id="output07">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output08</td>
+                <td>
+                    <select name="output08" id="output08">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output09</td>
+                <td>
+                    <select name="output09" id="output09">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output10</td>
+                <td>
+                    <select name="output10" id="output10">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output11</td>
+                <td>
+                    <select name="output11" id="output11">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output12</td>
+                <td>
+                    <select name="output12" id="output12">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output13</td>
+                <td>
+                    <select name="output13" id="output13">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output14</td>
+                <td>
+                    <select name="output14" id="output14">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output15</td>
+                <td>
+                    <select name="output15" id="output15">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output16</td>
+                <td>
+                    <select name="output16" id="output16">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>All Outputs</td>
+                <td>
+                    <select name="Alloutput" id="alloutput">
+                        <option>Input01</option>
+                        <option>Input02</option>
+                        <option>Input03</option>
+                        <option>Input04</option>
+                        <option>Input05</option>
+                        <option>Input06</option>
+                        <option>Input07</option>
+                        <option>Input08</option>
+                        <option>Input09</option>
+                        <option>Input10</option>
+                        <option>Input11</option>
+                        <option>Input12</option>
+                        <option>Input13</option>
+                        <option>Input14</option>
+                        <option>Input15</option>
+                        <option>Input16</option>
+                    </select>
+                </td>
+            </tr>
+            
+        </table>
+        <div class="btn__group"></div>
+
+
+    </div>
+    <div class="preset__table"></div>
+    
+ </main>
+ <footer>
+
+ </footer>
+ <script>
+  
+   </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+:root {
+  --darkblue: #536976;
+  --darkbluea: -webkit-linear-gradient(to right, #292e49, #536976);
+  --darkblueb: linear-gradient(to right, #292e49, #536976);
+}
+
+.select__appearance {
+  -moz-appearance: none;
+  -wepkit-appearance: none;
+  appearance: none;
+}
