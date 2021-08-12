@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPX-M16</title>
     <style>
-        :root { 
-            
-        }
-        body {
+html { 
+  background-color: ;
+
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
   margin: 0px;
-  display: grid;
-  justify-content: center;
   background: #ece9e6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right,#ffffff,#ece9e6); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right,#ffffff,#ece9e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -20,7 +25,7 @@
 header {
   position: sticky;
   width: 100%;
-  height: 80px;
+  height: 10vh;
   margin: 0px;
   display: flex;
   justify-content: space-between;
@@ -47,8 +52,8 @@ h1 {
 }
 main {
   display: flex;
-  width: 1450px;
-  height: 600px;
+  width: 100%;
+  height: 90%;
   background: #8e9eab; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
@@ -62,11 +67,12 @@ main {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .nav {
+  width: 7%;
 }
 .nav-bar {
   margin: 0px;
-  width: 100px;
-  height: 600px;
+  width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,6 +90,7 @@ main {
 }
 
 ul {
+  width: 100%;
   list-style: none;
   margin: 0px;
   box-sizing: border-box;
@@ -91,11 +98,13 @@ ul {
 }
 
 li {
-  width: 100px;
-  height: 200px;
+  width: 100%;
+  height: 30vh;
   margin: 0px;
   box-sizing: border-box;
-  padding: 80px 30px 58px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 li:hover {
   background: #eef2f3; /* fallback for old browsers */
@@ -128,12 +137,13 @@ li:hover {
 .li_edid {
 }
 .li_preset {
-  padding-left: 28px;
+ 
 }
 
 span {
   box-sizing: border-box;
   padding: 5px;
+  height: auto;
 }
 
 .video {
@@ -159,27 +169,50 @@ span {
   font-weight: 500;
 }
 
-.btn__group {
+
+.table__group {
+  width: 93%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  
+}
+
+.table__switch {
+  width: 45%;
+  height: 77vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  padding: 3px;
+  
 
 }
-table {
+.table__switch table { 
+  width: 100%;
+  height: 50vh;
+  border-collapse: collapse;
 
-    border-collapse: collapse;
- 
+  
 }
-td { 
+.table__switch h3 { 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0px;
+}
+
+.table__switch td { 
     text-align: center;
-    width: 200px;
+    width: 50%;
     height: 20px;
     padding: 5px 0px 5px 0px;
-    border: 1px solid gray;
+    border: 1px solid #bdc3c7;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 15px;
+    font-size: 13px;
 }
-select { 
-    width: 200px;
+.table__switch select { 
+    width: 100%;
     height: 20px;
     border: 0px;
     box-sizing: border-box;
@@ -189,38 +222,73 @@ select {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     padding: 1px 65px 1px 65px ;
 }
-option { 
-    
+
+select:focus { 
+  border: 0px;
 }
-.btn {
-  width: 60px;
-  height: 30px;
-  background-color: #f2f6fc;
+select option { 
+  border: 0px;
 }
-.btn_input {
- 
+.table__btn { 
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  
 
 }
-
-.output {
+.preset__table { 
+  width: 100%;
+  height: 60vh;
   border-radius: 10px;
-  background: #00d2ff; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3a7bd5,
-    #00d2ff
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3a7bd5,
-    #00d2ff
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  color: #f2f6fc;
-  font-size: 11px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 5px;
+  
+
+
+}
+.preset__table h3 { 
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 400;
+  margin: 0px;
 }
+
+.preset__box { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #8e9eab4b;
+  border-radius: 5px ;
+  box-shadow: 1px 1px 1px 1px #8e9eab ;
+  box-sizing: border-box;
+  padding: 5px;
+
+}
+h4 { 
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.btn {
+  width: 25%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.btn:hover {
+  background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 
 .switch {
   background: #ece9e6; /* fallback for old browsers */
@@ -236,6 +304,35 @@ option {
 }
 .switch:hover {
   border-radius: 9px;
+}
+.create__table { 
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #8e9eab4b;
+  border-radius: 5px ;
+  box-shadow: 1px 1px 1px 1px #8e9eab ;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-top: 5vh;
+}
+.btn__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create__btn { 
+  width: 32%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 .btn__click {
   background: #e0eafc; /* fallback for old browsers */
@@ -263,12 +360,14 @@ option {
              <ul class="ul">
              <li class="li_video"><a class="video" href="spx.html" style="text-decoration: none;"><span>VIDEO</span></a></li> 
              <li class="li_edid"><a class="edid" href="edid.html" style="text-decoration: none;"><span>EDID</span></a></li> 
-             <li class="li_preset"><a class="preset" href="preset.html" style="text-decoration: none;"><span>PRESET</span></a></li> 
+             <li class="li_preset"><a class="preset" href="system.html" style="text-decoration: none;"><span>SYSTEM</span></a></li> 
          </ul>
      
         </nav>
      </div>
-    <div class="switch__table">
+  <div class="table__group">
+    <div class="table__switch">
+      <h3>Switch</h3>
         <table>
             <tr>
                 <th>Output</th>
@@ -278,7 +377,7 @@ option {
                 <td>Output01</td>
                 <td>
                     <select name="output01" id="output01">
-                        <option>Input01</option>
+                        <option selected>Input01</option>
                         <option>Input02</option>
                         <option>Input03</option>
                         <option>Input04</option>
@@ -302,7 +401,7 @@ option {
                 <td>
                     <select name="output02" id="output02">
                         <option>Input01</option>
-                        <option>Input02</option>
+                        <option selected>Input02</option>
                         <option>Input03</option>
                         <option>Input04</option>
                         <option>Input05</option>
@@ -326,7 +425,7 @@ option {
                     <select name="output03" id="output03">
                         <option>Input01</option>
                         <option>Input02</option>
-                        <option>Input03</option>
+                        <option selected>Input03</option>
                         <option>Input04</option>
                         <option>Input05</option>
                         <option>Input06</option>
@@ -350,7 +449,7 @@ option {
                         <option>Input01</option>
                         <option>Input02</option>
                         <option>Input03</option>
-                        <option>Input04</option>
+                        <option selected>Input04</option>
                         <option>Input05</option>
                         <option>Input06</option>
                         <option>Input07</option>
@@ -374,7 +473,7 @@ option {
                         <option>Input02</option>
                         <option>Input03</option>
                         <option>Input04</option>
-                        <option>Input05</option>
+                        <option selected>Input05</option>
                         <option>Input06</option>
                         <option>Input07</option>
                         <option>Input08</option>
@@ -398,7 +497,7 @@ option {
                         <option>Input03</option>
                         <option>Input04</option>
                         <option>Input05</option>
-                        <option>Input06</option>
+                        <option selected>Input06</option>
                         <option>Input07</option>
                         <option>Input08</option>
                         <option>Input09</option>
@@ -422,7 +521,7 @@ option {
                         <option>Input04</option>
                         <option>Input05</option>
                         <option>Input06</option>
-                        <option>Input07</option>
+                        <option selected>Input07</option>
                         <option>Input08</option>
                         <option>Input09</option>
                         <option>Input10</option>
@@ -446,7 +545,7 @@ option {
                         <option>Input05</option>
                         <option>Input06</option>
                         <option>Input07</option>
-                        <option>Input08</option>
+                        <option selected>Input08</option>
                         <option>Input09</option>
                         <option>Input10</option>
                         <option>Input11</option>
@@ -470,7 +569,7 @@ option {
                         <option>Input06</option>
                         <option>Input07</option>
                         <option>Input08</option>
-                        <option>Input09</option>
+                        <option selected>Input09</option>
                         <option>Input10</option>
                         <option>Input11</option>
                         <option>Input12</option>
@@ -494,7 +593,7 @@ option {
                         <option>Input07</option>
                         <option>Input08</option>
                         <option>Input09</option>
-                        <option>Input10</option>
+                        <option selected>Input10</option>
                         <option>Input11</option>
                         <option>Input12</option>
                         <option>Input13</option>
@@ -518,7 +617,7 @@ option {
                         <option>Input08</option>
                         <option>Input09</option>
                         <option>Input10</option>
-                        <option>Input11</option>
+                        <option selected>Input11</option>
                         <option>Input12</option>
                         <option>Input13</option>
                         <option>Input14</option>
@@ -542,7 +641,7 @@ option {
                         <option>Input09</option>
                         <option>Input10</option>
                         <option>Input11</option>
-                        <option>Input12</option>
+                        <option selected>Input12</option>
                         <option>Input13</option>
                         <option>Input14</option>
                         <option>Input15</option>
@@ -566,7 +665,7 @@ option {
                         <option>Input10</option>
                         <option>Input11</option>
                         <option>Input12</option>
-                        <option>Input13</option>
+                        <option selected>Input13</option>
                         <option>Input14</option>
                         <option>Input15</option>
                         <option>Input16</option>
@@ -590,7 +689,7 @@ option {
                         <option>Input11</option>
                         <option>Input12</option>
                         <option>Input13</option>
-                        <option>Input14</option>
+                        <option selected>Input14</option>
                         <option>Input15</option>
                         <option>Input16</option>
                     </select>
@@ -614,7 +713,7 @@ option {
                         <option>Input12</option>
                         <option>Input13</option>
                         <option>Input14</option>
-                        <option>Input15</option>
+                        <option selected>Input15</option>
                         <option>Input16</option>
                     </select>
                 </td>
@@ -638,7 +737,7 @@ option {
                         <option>Input13</option>
                         <option>Input14</option>
                         <option>Input15</option>
-                        <option>Input16</option>
+                        <option selected>Input16</option>
                     </select>
                 </td>
             </tr>
@@ -646,6 +745,7 @@ option {
                 <td>All Outputs</td>
                 <td>
                     <select name="Alloutput" id="alloutput">
+                        <option selected>Please Selected</option>
                         <option>Input01</option>
                         <option>Input02</option>
                         <option>Input03</option>
@@ -667,11 +767,71 @@ option {
             </tr>
             
         </table>
-        <div class="btn__group"></div>
-
-
+        </div>
+    <div class="table__btn">
+      <div class="preset__table">
+       <div class="preset__box">
+        <h4>PRESET1</h4>
+        <button class="btn">Call</button>
+        <button class="btn">Save</button>
+        <button class="btn">Clear</button>
+       </div>
+    <div class="preset__box">
+      <h4>PRESET2</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
     </div>
-    <div class="preset__table"></div>
+    <div class="preset__box">
+      <h4>PRESET3</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET4</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET5</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET6</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET7</h4>
+      <button class="btn">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET8</h4>
+      <button class="btn" value="">Call</button>
+      <button class="btn">Save</button>
+      <button class="btn">Clear</button>
+      </div>
+      </div>
+      <div class="create__table">
+        <h4>CREATE</h4>
+        <div class="btn__group">
+          <button class="create__btn">Create</button>
+          <button class="create__btn">One to One</button>
+          <button class="create__btn">Clr All</button>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+ 
+    
     
  </main>
  <footer>
