@@ -124,8 +124,18 @@
     .hidden { 
         display: none;
     }
-    
 
+    span { 
+        color: red;
+    }
+    
+@media all and (min-width: 768px) { 
+
+}
+
+@media all and (min-width: 768px) and (max-width:1024px) { 
+    
+}
     </style>
 </head>
 
@@ -137,14 +147,16 @@
     
         </div>
         <div class="login">
-            <form method="post" action="video.cgi" class="login-form">
+            <form method="get" action="video.cgi" class="login-form">
                 <input type="text" placeholder=" Username" id="login__text" name="id" /> 
                 <input type="password" placeholder=" Password" id="login__password" name="password" />
+                <span>Please check your ID and Password</span>
                 <input type="submit" value="Log In" id="login__btn" onclick="loginBtnClick();"/>
             </form>
             
         </div>
     </div>
  </main>
+
 </body>
 </html>

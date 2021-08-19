@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPX-M16</title>
+    <style>
+html { 
+  background-color: ;
+
+}
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#ffffff,#ece9e6); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#ffffff,#ece9e6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+header {
+  position: sticky;
+  width: 100%;
+  height: 10vh;
+  margin: 0px;
+  display: flex;
+  justify-content: space-between;
+  background: #536976; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,#292e49,#536976); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right,#292e49,#536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.logo {
+  margin: 0px;
+  width: 300px;
+  height: 0px;
+}
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  width: 300px;
+  height: 80px;
+  color: azure;
+  box-sizing: border-box;
+  padding-top: 0px;
+}
+.version {
+}
+.main {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  background: #8e9eab; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #eef2f3,
+    #8e9eab
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.nav {
+  width: 7%;
+}
+.nav-bar {
+  margin: 0px;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+ul {
+  width: 100%;
+  list-style: none;
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0;
+} 
+
+li {
+  width: 100%;
+  height: 30vh;
+  margin: 0px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li:hover {
+  background: #eef2f3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: black;
+}
+.li_video {
+  background: #eef2f3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #8e9eab,
+    #eef2f3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.li_edid {
+}
+.li_preset {
+ 
+}
+
+span {
+  box-sizing: border-box;
+  padding: 5px;
+  height: auto;
+}
+
+.video {
+  color: black;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.edid {
+  color: azure;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.preset {
+  color: azure;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+
+.table__group {
+  width: 93%;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  
+}
+
+.table__switch {
+  width: 45%;
+  height: 77vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  padding: 3px;
+  
+
+}
+.table__switch table { 
+  width: 100%;
+  height: 50vh;
+  border-collapse: collapse;
+
+  
+}
+.table__switch h3 { 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0px;
+}
+
+.table__switch td { 
+    text-align: center;
+    width: 50%;
+    height: 20px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #bdc3c7;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+}
+.table__switch select { 
+    width: 100%;
+    height: 20px;
+    border: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 1px 65px 1px 65px ;
+}
+
+select:focus { 
+  border: 0px;
+}
+select option { 
+  border: 0px;
+}
+.table__btn { 
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  
+
+}
+.preset__table { 
+  width: 100%;
+  height: 60vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 5px;
+  
+
+
+}
+.preset__table h3 { 
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0px;
+}
+
+.preset__box { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #8e9eab4b;
+  border-radius: 5px ;
+  box-shadow: 1px 1px 1px 1px #8e9eab ;
+  box-sizing: border-box;
+  padding: 5px;
+
+}
+h4 { 
+  margin: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+.btn {
+  width: 25%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.btn:hover {
+  background: #E0EAFC;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+.switch {
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #ece9e6,
+    #ffffff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6,#ffffff ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 11px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.switch:hover {
+  border-radius: 9px;
+}
+.create__table { 
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #8e9eab4b;
+  border-radius: 5px ;
+  box-shadow: 1px 1px 1px 1px #8e9eab ;
+  box-sizing: border-box;
+  justify-content: space-between;
+  margin-top: 5vh;
+}
+.btn__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.create__btn { 
+  width: 32%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.btn__click {
+  background: #e0eafc; /* fallback for old browsers */
+  background: -webkit-linear-gradient( to right, #cfdef3, #e0eafc ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient( to right, #cfdef3, #e0eafc ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { 
+  .table__switch {
+  width: 45%;
+  height: 60vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  padding: 3px;
+  
+
+}
+  .table__switch td { 
+    text-align: center;
+    width: 50%;
+    height: 20px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #bdc3c7;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 11px;
+}
+
+  .table__switch select { 
+    width: 100%;
+    height: 20px;
+    border: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 1px 0px 1px 15px ;
+}
+.btn {
+  width: 20%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.create__btn { 
+  width: 32%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 12px;
+}
+
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) { 
+  .table__switch {
+  width: 45%;
+  height: 75vh;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px #8e9eab ;
+  padding: 3px;
+  
+
+}
+  .table__switch td { 
+    text-align: center;
+    width: 50%;
+    height: 20px;
+    padding: 5px 0px 5px 0px;
+    border: 1px solid #bdc3c7;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 11px;
+}
+
+  .table__switch select { 
+    width: 100%;
+    height: 20px;
+    border: 0px;
+    box-sizing: border-box;
+    background-color: transparent;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    padding: 1px 0px 1px 15px ;
+}
+.btn {
+  width: 20%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #ece9e6; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.create__btn { 
+  width: 32%;
+  height: 30px;
+  background-color: #f2f6fc;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ece9e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ece9e6, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ece9e6, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 12px;
+}
+
+    
+}
+
+     
+    </style>
+</head>
+<body>
+ <header>
+    <div class="logo">
+    </div>
+    <h1>SPX-M16</h1>
+    <div class="version">AmberUI 1.0ver</div>
+ </header>
+ <form name="edid" class="main" method="GET" action="video.cgi">
+    <div class="nav">
+        <nav class="nav-bar">
+             <ul class="ul">
+             <li class="li_video"><a class="video" href="spx.html" style="text-decoration: none;"><span>VIDEO</span></a></li> 
+             <li class="li_edid"><a class="edid" href="edid.html" style="text-decoration: none;"><span>EDID</span></a></li> 
+             <li class="li_preset"><a class="preset" href="system.html" style="text-decoration: none;"><span>SYSTEM</span></a></li> 
+         </ul>
+     
+        </nav>
+     </div>
+  <div class="table__group">
+    <div class="table__switch">
+      <h3>Switch</h3>
+        <table>
+            <tr>
+                <th>Output</th>
+                <th>Input</th>
+            </tr>
+            <tr>
+                <td>Output01</td>
+                <td>
+                    <select name="output01" id="output01">
+                        <option selected value="I01O01">Input01</option>
+                        <option value="I02O01">Input02</option>
+                        <option value="I03O01">Input03</option>
+                        <option value="I04O01">Input04</option>
+                        <option value="I05O01">Input05</option>
+                        <option value="I06O01">Input06</option>
+                        <option value="I07O01">Input07</option>
+                        <option value="I08O01">Input08</option>
+                        <option value="I09O01">Input09</option>
+                        <option value="I10O01">Input10</option>
+                        <option value="I11O01">Input11</option>
+                        <option value="I12O01">Input12</option>
+                        <option value="I13O01">Input13</option>
+                        <option value="I14O01">Input14</option>
+                        <option value="I15O01">Input15</option>
+                        <option value="I16O01">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output02</td>
+                <td>
+                    <select name="output02" id="output02">
+                        <option value="I01O02">Input01</option>
+                        <option selected value="I02O02">Input02</option>
+                        <option value="I03O02">Input03</option>
+                        <option value="I04O02">Input04</option>
+                        <option value="I05O02">Input05</option>
+                        <option value="I06O02">Input06</option>
+                        <option value="I07O02">Input07</option>
+                        <option value="I08O02">Input08</option>
+                        <option value="I09O02">Input09</option>
+                        <option value="I10O02">Input10</option>
+                        <option value="I11O02">Input11</option>
+                        <option value="I12O02">Input12</option>
+                        <option value="I13O02">Input13</option>
+                        <option value="I14O02">Input14</option>
+                        <option value="I15O02">Input15</option>
+                        <option value="I16O02">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output03</td>
+                <td>
+                    <select name="output03" id="output03">
+                        <option value="I01O03">Input01</option>
+                        <option value="I02O03">Input02</option>
+                        <option selected value="I03O03">Input03</option>
+                        <option value="I04O03">Input04</option>
+                        <option value="I05O03">Input05</option>
+                        <option value="I06O03">Input06</option>
+                        <option value="I07O03">Input07</option>
+                        <option value="I08O03">Input08</option>
+                        <option value="I09O03">Input09</option>
+                        <option value="I10O03">Input10</option>
+                        <option value="I11O03">Input11</option>
+                        <option value="I12O03">Input12</option>
+                        <option value="I13O03">Input13</option>
+                        <option value="I14O03">Input14</option>
+                        <option value="I15O03">Input15</option>
+                        <option value="I16O03">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output04</td>
+                <td>
+                    <select name="output04" id="output04">
+                        <option value="I01O04">Input01</option>
+                        <option value="I02O04">Input02</option>
+                        <option value="I03O04">Input03</option>
+                        <option selected value="I04O04">Input04</option>
+                        <option value="I05O04">Input05</option>
+                        <option value="I06O04">Input06</option>
+                        <option value="I07O04">Input07</option>
+                        <option value="I08O04">Input08</option>
+                        <option value="I09O04">Input09</option>
+                        <option value="I10O04">Input10</option>
+                        <option value="I11O04">Input11</option>
+                        <option value="I12O04">Input12</option>
+                        <option value="I13O04">Input13</option>
+                        <option value="I14O04">Input14</option>
+                        <option value="I15O04">Input15</option>
+                        <option value="I16O04">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output05</td>
+                <td>
+                    <select name="output05" id="output05">
+                        <option value="I01O05">Input01</option>
+                        <option value="I02O05">Input02</option>
+                        <option value="I03O05">Input03</option>
+                        <option value="I04O05">Input04</option>
+                        <option selected value="I05O05">Input05</option>
+                        <option value="I06O05">Input06</option>
+                        <option value="I07O05">Input07</option>
+                        <option value="I08O05">Input08</option>
+                        <option value="I09O05">Input09</option>
+                        <option value="I10O05">Input10</option>
+                        <option value="I11O05">Input11</option>
+                        <option value="I12O05">Input12</option>
+                        <option value="I13O05">Input13</option>
+                        <option value="I14O05">Input14</option>
+                        <option value="I15O05">Input15</option>
+                        <option value="I16O05">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output06</td>
+                <td>
+                    <select name="output06" id="output06">
+                        <option value="I01O06">Input01</option>
+                        <option value="I02O06">Input02</option>
+                        <option value="I03O06">Input03</option>
+                        <option value="I04O06">Input04</option>
+                        <option value="I05O06">Input05</option>
+                        <option selected value="I06O06">Input06</option>
+                        <option value="I07O06">Input07</option>
+                        <option value="I08O06">Input08</option>
+                        <option value="I09O06">Input09</option>
+                        <option value="I10O06">Input10</option>
+                        <option value="I11O06">Input11</option>
+                        <option value="I12O06">Input12</option>
+                        <option value="I13O06">Input13</option>
+                        <option value="I14O06">Input14</option>
+                        <option value="I15O06">Input15</option>
+                        <option value="I16O06">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output07</td>
+                <td>
+                    <select name="output07" id="output07">
+                        <option value="I01O07">Input01</option>
+                        <option value="I02O07">Input02</option>
+                        <option value="I03O07">Input03</option>
+                        <option value="I04O07">Input04</option>
+                        <option value="I05O07">Input05</option>
+                        <option value="I06O07">Input06</option>
+                        <option selected value="I07O07">Input07</option>
+                        <option value="I08O07">Input08</option>
+                        <option value="I09O07">Input09</option>
+                        <option value="I10O07">Input10</option>
+                        <option value="I11O07">Input11</option>
+                        <option value="I12O07">Input12</option>
+                        <option value="I13O07">Input13</option>
+                        <option value="I14O07">Input14</option>
+                        <option value="I15O07">Input15</option>
+                        <option value="I16O07">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output08</td>
+                <td>
+                    <select name="output08" id="output08">
+                        <option value="I01O08">Input01</option>
+                        <option value="I02O08">Input02</option>
+                        <option value="I03O08">Input03</option>
+                        <option value="I04O08">Input04</option>
+                        <option value="I05O08">Input05</option>
+                        <option value="I06O08">Input06</option>
+                        <option value="I07O08">Input07</option>
+                        <option selected value="I08O08">Input08</option>
+                        <option value="I09O08">Input09</option>
+                        <option value="I10O08">Input10</option>
+                        <option value="I11O08">Input11</option>
+                        <option value="I12O08">Input12</option>
+                        <option value="I13O08">Input13</option>
+                        <option value="I14O08">Input14</option>
+                        <option value="I15O08">Input15</option>
+                        <option value="I16O08">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output09</td>
+                <td>
+                    <select name="output09" id="output09">
+                        <option value="I01O09">Input01</option>
+                        <option value="I02O09">Input02</option>
+                        <option value="I03O09">Input03</option>
+                        <option value="I04O09">Input04</option>
+                        <option value="I05O09">Input05</option>
+                        <option value="I06O09">Input06</option>
+                        <option value="I07O09">Input07</option>
+                        <option value="I08O09">Input08</option>
+                        <option selected value="I09O09">Input09</option>
+                        <option value="I10O09">Input10</option>
+                        <option value="I11O09">Input11</option>
+                        <option value="I12O09">Input12</option>
+                        <option value="I13O09">Input13</option>
+                        <option value="I14O09">Input14</option>
+                        <option value="I15O09">Input15</option>
+                        <option value="I16O09">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output10</td>
+                <td>
+                    <select name="output10" id="output10">
+                        <option value="I01O10">Input01</option>
+                        <option value="I02O10">Input02</option>
+                        <option value="I03O10">Input03</option>
+                        <option value="I04O10">Input04</option>
+                        <option value="I05O10">Input05</option>
+                        <option value="I06O10">Input06</option>
+                        <option value="I07O10">Input07</option>
+                        <option value="I08O10">Input08</option>
+                        <option value="I09O10">Input09</option>
+                        <option selected value="I10O10">Input10</option>
+                        <option value="I11O10">Input11</option>
+                        <option value="I12O10">Input12</option>
+                        <option value="I13O10">Input13</option>
+                        <option value="I14O10">Input14</option>
+                        <option value="I15O10">Input15</option>
+                        <option value="I16O10">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output11</td>
+                <td>
+                    <select name="output11" id="output11">
+                        <option value="I01O11">Input01</option>
+                        <option value="I02O11">Input02</option>
+                        <option value="I03O11">Input03</option>
+                        <option value="I04O11">Input04</option>
+                        <option value="I05O11">Input05</option>
+                        <option value="I06O11">Input06</option>
+                        <option value="I07O11">Input07</option>
+                        <option value="I08O11">Input08</option>
+                        <option value="I09O11">Input09</option>
+                        <option value="I10O11">Input10</option>
+                        <option selected value="I11O11">Input11</option>
+                        <option value="I12O11">Input12</option>
+                        <option value="I13O11">Input13</option>
+                        <option value="I14O11">Input14</option>
+                        <option value="I15O11">Input15</option>
+                        <option value="I16O11">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output12</td>
+                <td>
+                    <select name="output12" id="output12">
+                        <option value="I01O12">Input01</option>
+                        <option value="I02O12">Input02</option>
+                        <option value="I03O12">Input03</option>
+                        <option value="I04O12">Input04</option>
+                        <option value="I05O12">Input05</option>
+                        <option value="I06O12">Input06</option>
+                        <option value="I07O12">Input07</option>
+                        <option value="I08O12">Input08</option>
+                        <option value="I09O12">Input09</option>
+                        <option value="I10O12">Input10</option>
+                        <option value="I11O12">Input11</option>
+                        <option selected value="I12O12">Input12</option>
+                        <option value="I13O12">Input13</option>
+                        <option value="I14O12">Input14</option>
+                        <option value="I15O12">Input15</option>
+                        <option value="I16O12">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output13</td>
+                <td>
+                    <select name="output13" id="output13">
+                        <option value="I01O13">Input01</option>
+                        <option value="I02O13">Input02</option>
+                        <option value="I03O13">Input03</option>
+                        <option value="I04O13">Input04</option>
+                        <option value="I05O13">Input05</option>
+                        <option value="I06O13">Input06</option>
+                        <option value="I07O13">Input07</option>
+                        <option value="I08O13">Input08</option>
+                        <option value="I09O13">Input09</option>
+                        <option value="I10O13">Input10</option>
+                        <option value="I11O13">Input11</option>
+                        <option value="I12O13">Input12</option>
+                        <option selected value="I13O13">Input13</option>
+                        <option value="I14O13">Input14</option>
+                        <option value="I15O13">Input15</option>
+                        <option value="I16O13">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output14</td>
+                <td>
+                    <select name="output14" id="output14">
+                        <option value="I01O14">Input01</option>
+                        <option value="I02O14">Input02</option>
+                        <option value="I03O14">Input03</option>
+                        <option value="I04O14">Input04</option>
+                        <option value="I05O14">Input05</option>
+                        <option value="I06O14">Input06</option>
+                        <option value="I07O14">Input07</option>
+                        <option value="I08O14">Input08</option>
+                        <option value="I09O14">Input09</option>
+                        <option value="I10O14">Input10</option>
+                        <option value="I11O14">Input11</option>
+                        <option value="I12O14">Input12</option>
+                        <option value="I13O14">Input13</option>
+                        <option selected value="I14O14">Input14</option>
+                        <option value="I15O14">Input15</option>
+                        <option value="I16O14">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output15</td>
+                <td>
+                    <select name="output15" id="output15">
+                        <option value="I01O15">Input01</option>
+                        <option value="I02O15">Input02</option>
+                        <option value="I03O15">Input03</option>
+                        <option value="I04O15">Input04</option>
+                        <option value="I05O15">Input05</option>
+                        <option value="I06O15">Input06</option>
+                        <option value="I07O15">Input07</option>
+                        <option value="I08O15">Input08</option>
+                        <option value="I09O15">Input09</option>
+                        <option value="I10O15">Input10</option>
+                        <option value="I11O15">Input11</option>
+                        <option value="I12O15">Input12</option>
+                        <option value="I13O15">Input13</option>
+                        <option value="I14O15">Input14</option>
+                        <option selected value="I15O15">Input15</option>
+                        <option value="I16O15">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Output16</td>
+                <td>
+                    <select name="output16" id="output16">
+                        <option value="I01O16">Input01</option>
+                        <option value="I02O16">Input02</option>
+                        <option value="I03O16">Input03</option>
+                        <option value="I04O16">Input04</option>
+                        <option value="I05O16">Input05</option>
+                        <option value="I06O16">Input06</option>
+                        <option value="I07O16">Input07</option>
+                        <option value="I08O16">Input08</option>
+                        <option value="I09O16">Input09</option>
+                        <option value="I10O16">Input10</option>
+                        <option value="I11O16">Input11</option>
+                        <option value="I12O16">Input12</option>
+                        <option value="I13O16">Input13</option>
+                        <option value="I14O16">Input14</option>
+                        <option value="I15O16">Input15</option>
+                        <option selected value="I16O16">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>All Outputs</td>
+                <td>
+                    <select name="Alloutput" id="alloutput">
+                        <option selected>Please Selected</option>
+                        <option value="I01all">Input01</option>
+                        <option value="I02all">Input02</option>
+                        <option value="I03all">Input03</option>
+                        <option value="I04all">Input04</option>
+                        <option value="I05all">Input05</option>
+                        <option value="I06all">Input06</option>
+                        <option value="I07all">Input07</option>
+                        <option value="I08all">Input08</option>
+                        <option value="I09all">Input09</option>
+                        <option value="I10all">Input10</option>
+                        <option value="I11all">Input11</option>
+                        <option value="I12all">Input12</option>
+                        <option value="I13all">Input13</option>
+                        <option value="I14all">Input14</option>
+                        <option value="I15all">Input15</option>
+                        <option value="I16all">Input16</option>
+                    </select>
+                </td>
+            </tr>
+            
+        </table>
+        </div>
+    <div class="table__btn">
+      <div class="preset__table">
+       <div class="preset__box">
+        <h4>PRESET1</h4>
+        <input type="submit" name="preset1_call" class="btn" value="Call">
+        <input type="submit" name="preset1_save" class="btn" value="Save"/>
+        <input type="submit" name="preset1_clear" class="btn" value="Clear"/>
+       </div>
+    <div class="preset__box">
+      <h4>PRESET2</h4>
+      <input type="submit" name="preset2_call" class="btn" value="Call">
+      <input type="submit" name="preset2_save" class="btn" value="Save"/>
+      <input type="submit" name="preset2_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET3</h4>
+      <input type="submit" name="preset3_call" class="btn" value="Call">
+      <input type="submit" name="preset3_save" class="btn" value="Save"/>
+      <input type="submit" name="preset3_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET4</h4>
+      <input type="submit" name="preset4_call" class="btn" value="Call">
+      <input type="submit" name="preset4_save" class="btn" value="Save"/>
+      <input type="submit" name="preset4_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET5</h4>
+      <input type="submit" name="preset5_call" class="btn" value="Call">
+      <input type="submit" name="preset5_save" class="btn" value="Save"/>
+      <input type="submit" name="preset5_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET6</h4>
+      <input type="submit" name="preset6_call" class="btn" value="Call">
+      <input type="submit" name="preset6_save" class="btn" value="Save"/>
+      <input type="submit" name="preset6_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET7</h4>
+      <input type="submit" name="preset7_call" class="btn" value="Call">
+      <input type="submit" name="preset7_save" class="btn" value="Save"/>
+      <input type="submit" name="preset7_clear" class="btn" value="Clear"/>
+    </div>
+    <div class="preset__box">
+      <h4>PRESET8</h4>
+      <input type="submit" name="preset8_call" class="btn" value="Call">
+      <input type="submit" name="preset8_save" class="btn" value="Save"/>
+      <input type="submit" name="preset8_clear" class="btn" value="Clear"/>
+      </div>
+      </div>
+      <div class="create__table">
+        <h4>CREATE</h4>
+        <div class="btn__group">
+          <input type="submit" name="create" class="create__btn" value="Create" />
+          <input type="submit" name="onetoone" class="create__btn" value="One to One" />
+          <input type="submit" name="refresh" class="create__btn" value="Refresh" />
+        </div>
+      </div>
+    </div>
+   
+  </div>
+ 
+    
+    
+</form>
+ <footer>
+
+ </footer>
+ <script>
+  
+   </script>
+</body>
+</html>
